@@ -35,6 +35,12 @@
                 <span class="pc-mtext">Typography</span>
               </a>
             </li>
+              <li class="pc-item">
+              <a href="../elements/bc_typography.html" class="pc-link">
+                <span class="pc-micon"><i class="ti ti-typography"></i></span>
+                <span class="pc-mtext">Vehicle</span>
+              </a>
+            </li>
             <li class="pc-item">
               <a href="../elements/bc_color.html" class="pc-link">
                 <span class="pc-micon"><i class="ti ti-color-swatch"></i></span>

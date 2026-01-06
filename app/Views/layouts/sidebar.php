@@ -24,6 +24,13 @@
             <span class="pc-mtext">Typography</span>
           </a>
         </li>
+        </li>
+        <li class="pc-item">
+          <a href="<?= base_url('vehicle') ?>" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-typography"></i></span>
+            <span class="pc-mtext">Vehicle</span>
+          </a>
+        </li>
         <li class="pc-item">
           <a href="<?= base_url('color') ?>" class="pc-link">
             <span class="pc-micon"><i class="ti ti-color-swatch"></i></span>
@@ -58,15 +65,16 @@
           <label>Other</label>
           <i class="ti ti-brand-chrome"></i>
         </li>
-        
+
         <li class="pc-item pc-hasmenu">
-          <a href="#!" class="pc-link"><span class="pc-micon"><i class="ti ti-menu"></i></span><span class="pc-mtext">Menu
+          <a href="#!" class="pc-link"><span class="pc-micon"><i class="ti ti-menu"></i></span><span
+              class="pc-mtext">Menu
               levels</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
           <ul class="pc-submenu">
             <li class="pc-item"><a class="pc-link" href="#!">Level 2.1</a></li>
-            </ul>
+          </ul>
         </li>
-        
+
         <li class="pc-item">
           <a href="<?= base_url('sample-page') ?>" class="pc-link">
             <span class="pc-micon"><i class="ti ti-brand-chrome"></i></span>
@@ -74,14 +82,14 @@
           </a>
         </li>
       </ul>
-      
+
       <div class="card text-center">
         <div class="card-body">
           <img src="<?= base_url('assets/images/img-navbar-card.png') ?>" alt="images" class="img-fluid mb-2">
           <h5>Upgrade To Pro</h5>
           <p>To get more features and components</p>
           <a href="https://codedthemes.com/item/berry-bootstrap-5-admin-template/" target="_blank"
-          class="btn btn-success">Buy Now</a>
+            class="btn btn-success">Buy Now</a>
         </div>
       </div>
     </div>
