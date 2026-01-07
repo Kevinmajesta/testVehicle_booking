@@ -8,7 +8,7 @@
     <div class="navbar-content">
       <ul class="pc-navbar">
         <li class="pc-item">
-          <a href="<?= base_url('dashboard') ?>" class="pc-link">
+          <a href="<?= base_url('/  ') ?>" class="pc-link">
             <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
             <span class="pc-mtext">Dashboard</span>
           </a>
@@ -29,6 +29,13 @@
           <a href="<?= base_url('vehicle') ?>" class="pc-link">
             <span class="pc-micon"><i class="ti ti-typography"></i></span>
             <span class="pc-mtext">Vehicle</span>
+          </a>
+        </li>
+        </li>
+        <li class="pc-item">
+          <a href="<?= base_url('driver') ?>" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-typography"></i></span>
+            <span class="pc-mtext">Driver</span>
           </a>
         </li>
         <li class="pc-item">

@@ -20,3 +20,11 @@ $routes->post('vehicle/store', 'Vehicle::store');
 $routes->get('vehicle/edit/(:num)', 'Vehicle::edit/$1');
 $routes->post('vehicle/update/(:num)', 'Vehicle::update/$1');
 $routes->delete('vehicle/delete/(:num)', 'Vehicle::delete/$1');
+
+//driver
+$routes->get('driver', 'Driver::index');
+$routes->get('driver/create', 'Driver::create');
+$routes->post('driver/store', 'Driver::store');
+$routes->get('driver/edit/(:num)', 'Driver::edit/$1');
+$routes->post('driver/update/(:num)', 'Driver::update/$1');
+$routes->delete('driver/delete/(:num)', 'Driver::delete/$1');
