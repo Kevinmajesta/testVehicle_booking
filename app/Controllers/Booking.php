@@ -35,8 +35,10 @@ class Booking extends BaseController
             'title' => 'Buat Pesanan Baru',
             'vehicles' => $vehicleModel->findAll(),
             'drivers' => $driverModel->where('status', 'Tersedia')->findAll(),
-            'approvers' => $userModel->where('role !=', 'admin')->findAll() // Hanya non-admin
+            'approvers_1' => $userModel->where('level', 1)->findAll(),
+            'approvers_2' => $userModel->where('level', 2)->findAll()
         ];
+
         return view('Booking/create', $data);
     }
 
@@ -66,25 +68,20 @@ class Booking extends BaseController
         return redirect()->to(base_url('booking'))->with('success', 'Pesanan berhasil dibuat!');
     }
 
-    public function edit($id)
+    public function edit($id) 
     {
-        $vehicleModel = new \App\Models\VehicleModel();
-        $driverModel = new \App\Models\DriverModel();
-        $userModel = new \App\Models\UserModel();
+        $regionModel = new \App\Models\RegionModel();
+        $vehicleLogModel = new \App\Models\VehicleLogModel();
 
         $data = [
-            'title' => 'Edit Pemesanan',
-            'booking' => $this->bookingModel->find($id),
-            'vehicles' => $vehicleModel->findAll(),
-            'drivers' => $driverModel->findAll(),
-            'approvers' => $userModel->where('role !=', 'admin')->findAll()
+            'title' => 'Detail & Monitoring Kendaraan',
+            'vehicle' => $this->vehicleModel->find($id),
+            'regions' => $regionModel->findAll(),
+            'logs' => $vehicleLogModel->where('vehicle_id', $id)
+                ->orderBy('date_logged', 'DESC')
+                ->findAll()
         ];
-
-        if (!$data['booking']) {
-            return redirect()->to(base_url('booking'))->with('error', 'Data tidak ditemukan.');
-        }
-
-        return view('Booking/edit', $data);
+        return view('Vehicle/edit', $data); 
     }
 
     public function update($id)
@@ -148,10 +145,10 @@ class Booking extends BaseController
 
         return redirect()->to(base_url('booking/approval'))->with('success', 'Persetujuan berhasil dicatat.');
     }
-    
+
     public function detail($id)
     {
-        $booking = $this->bookingModel->getDetailBooking($id); // Kita buat fungsi ini di model
+        $booking = $this->bookingModel->getDetailBooking($id);
 
         if (!$booking) {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();

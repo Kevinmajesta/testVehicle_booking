@@ -21,6 +21,12 @@
             <label>Manajemen Data</label>
           </li>
           <li class="pc-item">
+            <a href="<?= base_url('region') ?>" class="pc-link">
+              <span class="pc-micon"><i class="ti ti-map-pin"></i></span>
+              <span class="pc-mtext">Wilayah (Regions)</span>
+            </a>
+          </li>
+          <li class="pc-item">
             <a href="<?= base_url('vehicle') ?>" class="pc-link">
               <span class="pc-micon"><i class="ti ti-car"></i></span>
               <span class="pc-mtext">Data Kendaraan</span>
@@ -48,6 +54,12 @@
             <a href="<?= base_url('booking/approval') ?>" class="pc-link">
               <span class="pc-micon"><i class="ti ti-clipboard"></i></span>
               <span class="pc-mtext">Daftar Persetujuan</span>
+            </a>
+          </li>
+          <li class="pc-item">
+            <a href="<?= base_url('region') ?>" class="pc-link">
+              <span class="pc-micon"><i class="ti ti-map-pin"></i></span>
+              <span class="pc-mtext">Wilayah (Regions)</span>
             </a>
           </li>
         <?php endif; ?>

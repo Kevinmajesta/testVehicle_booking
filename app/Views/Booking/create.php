@@ -9,7 +9,9 @@
     <div class="pc-container">
         <div class="pc-content">
             <div class="card">
-                <div class="card-header"><h5>Form Pemesanan Kendaraan</h5></div>
+                <div class="card-header">
+                    <h5>Form Pemesanan Kendaraan</h5>
+                </div>
                 <div class="card-body">
                     <form action="<?= base_url('booking/store') ?>" method="post">
                         <?= csrf_field() ?>
@@ -17,15 +19,16 @@
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Pilih Kendaraan</label>
                                 <select name="vehicle_id" class="form-select" required>
-                                    <?php foreach($vehicles as $v): ?>
-                                        <option value="<?= $v['id'] ?>"><?= $v['model'] ?> (<?= $v['plate_number'] ?>)</option>
+                                    <?php foreach ($vehicles as $v): ?>
+                                        <option value="<?= $v['id'] ?>"><?= $v['model'] ?> (<?= $v['plate_number'] ?>)
+                                        </option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Pilih Driver</label>
                                 <select name="driver_id" class="form-select" required>
-                                    <?php foreach($drivers as $d): ?>
+                                    <?php foreach ($drivers as $d): ?>
                                         <option value="<?= $d['id'] ?>"><?= $d['name'] ?></option>
                                     <?php endforeach; ?>
                                 </select>
@@ -48,16 +51,18 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Atasan Level 1</label>
-                                <select name="approver_1_id" class="form-select" required>
-                                    <?php foreach($approvers as $a): ?>
+                                <select name="approver_1_id" class="form-control" required>
+                                    <option value="">Pilih Atasan Level 1</option>
+                                    <?php foreach ($approvers_1 as $a): ?>
                                         <option value="<?= $a['id'] ?>"><?= $a['username'] ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Atasan Level 2</label>
-                                <select name="approver_2_id" class="form-select" required>
-                                    <?php foreach($approvers as $a): ?>
+                                <select name="approver_2_id" class="form-control" required>
+                                    <option value="">Pilih Atasan Level 2</option>
+                                    <?php foreach ($approvers_2 as $a): ?>
                                         <option value="<?= $a['id'] ?>"><?= $a['username'] ?></option>
                                     <?php endforeach; ?>
                                 </select>

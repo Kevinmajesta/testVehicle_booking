@@ -20,6 +20,8 @@ $routes->post('vehicle/store', 'Vehicle::store');
 $routes->get('vehicle/edit/(:num)', 'Vehicle::edit/$1');
 $routes->post('vehicle/update/(:num)', 'Vehicle::update/$1');
 $routes->delete('vehicle/delete/(:num)', 'Vehicle::delete/$1');
+$routes->post('vehicle/saveLog', 'Vehicle::saveLog');
+$routes->get('vehicle/detail/(:num)', 'Vehicle::detail/$1');
 
 //driver
 $routes->get('driver', 'Driver::index');
@@ -28,6 +30,11 @@ $routes->post('driver/store', 'Driver::store');
 $routes->get('driver/edit/(:num)', 'Driver::edit/$1');
 $routes->post('driver/update/(:num)', 'Driver::update/$1');
 $routes->delete('driver/delete/(:num)', 'Driver::delete/$1');
+
+//regions
+$routes->get('region', 'Region::index');
+$routes->post('region/store', 'Region::store');
+$routes->get('region/delete/(:num)', 'Region::delete/$1');
 
 //booking
 $routes->get('booking', 'Booking::index');
