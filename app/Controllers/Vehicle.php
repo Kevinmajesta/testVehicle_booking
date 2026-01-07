@@ -21,7 +21,6 @@ class Vehicle extends BaseController
         $data = [
             'title' => 'Daftar Kendaraan',
             'vehicles' => $this->vehicleModel->getVehicles(),
-            // Mengambil semua log untuk ditampilkan di modal/halaman
             'vehicle_logs' => $vehicleLogModel->findAll()
         ];
         return view('Vehicle/index', $data);
@@ -62,7 +61,7 @@ class Vehicle extends BaseController
     public function edit($id)
     {
         $regionModel = new \App\Models\RegionModel();
-        $vehicleLogModel = new \App\Models\VehicleLogModel(); // Tambahkan ini
+        $vehicleLogModel = new \App\Models\VehicleLogModel();
 
         $data = [
             'title' => 'Edit & Monitoring Kendaraan',

@@ -12,7 +12,6 @@ class VehicleModel extends Model
 
     public function getVehicles()
     {
-        // Melakukan join agar kita bisa mengambil nama wilayah
         return $this->select('vehicles.*, regions.name as region_name')
             ->join('regions', 'regions.id = vehicles.region_id', 'left')
             ->findAll();

@@ -130,10 +130,8 @@ class Booking extends BaseController
         $userId = session()->get('user_id');
         $status = ($level == 1) ? 'Waiting Level 2' : 'Approved';
 
-        // 1. Update status di tabel utama bookings
         $this->bookingModel->update($id, ['status' => $status]);
 
-        // 2. Simpan jejak ke tabel approvals
         $db = \Config\Database::connect();
         $db->table('approvals')->insert([
             'booking_id' => $id,
@@ -165,10 +163,8 @@ class Booking extends BaseController
 
     public function export()
     {
-        // Mengambil semua data booking yang sudah di-join
         $data['bookings'] = $this->bookingModel->getFullBookingData();
 
-        // Memberitahu browser bahwa ini adalah file Excel
         header("Content-type: application/vnd-ms-excel");
         header("Content-Disposition: attachment; filename=Laporan_Pemesanan_Kendaraan.xls");
 

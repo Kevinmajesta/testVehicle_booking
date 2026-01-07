@@ -11,11 +11,11 @@ class CreateFuelAndServiceTable extends Migration
         $this->forge->addField([
             'id' => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
             'vehicle_id' => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true],
-            'log_type' => ['type' => 'ENUM', 'constraint' => ['BBM', 'Service']], // Konsisten dengan controller
-            'fuel_consumption' => ['type' => 'FLOAT', 'null' => true], // Konsisten dengan controller
+            'log_type' => ['type' => 'ENUM', 'constraint' => ['BBM', 'Service']], 
+            'fuel_consumption' => ['type' => 'FLOAT', 'null' => true],
             'cost' => ['type' => 'DECIMAL', 'constraint' => '10,2'],
             'description' => ['type' => 'TEXT', 'null' => true],
-            'date_logged' => ['type' => 'DATE'], // Konsisten dengan controller
+            'date_logged' => ['type' => 'DATE'], 
             'created_at' => ['type' => 'DATETIME', 'null' => true],
         ]);
         $this->forge->addKey('id', true);
@@ -24,6 +24,6 @@ class CreateFuelAndServiceTable extends Migration
 
     public function down()
     {
-        $this->forge->dropTable('vehicle_logs'); // WAJIB ADA agar refresh tidak error
+        $this->forge->dropTable('vehicle_logs');
     }
 }

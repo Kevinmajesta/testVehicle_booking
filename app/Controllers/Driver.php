@@ -50,7 +50,6 @@ class Driver extends BaseController
 
     public function update($id)
     {
-        // Validasi sederhana
         if (
             !$this->validate([
                 'name' => 'required',
