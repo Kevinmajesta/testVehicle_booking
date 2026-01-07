@@ -9,11 +9,6 @@
 <nav class="pc-sidebar">
   <div class="navbar-wrapper">
     <div class="m-header">
-      <a href="../dashboard/index.html" class="b-brand">
-        <!-- ========   Change your logo from here   ============ -->
-        <img src="../assets/images/logo-dark.svg" alt="" class="logo logo-lg">
-        <img src="../assets/images/favicon.svg" alt="" class="logo logo-sm">
-      </a>
     </div>
     <div class="tab-container">
       <div class="tab-sidemenu">

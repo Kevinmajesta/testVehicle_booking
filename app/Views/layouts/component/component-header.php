@@ -1,9 +1,6 @@
 <!-- [ Nav ] start -->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark default">
   <div class="container">
-    <a class="navbar-brand" href="../index.html">
-      <img src="../assets/images/logo-white.svg" alt="logo">
-    </a>
     <button
       class="navbar-toggler rounded"
       type="button"

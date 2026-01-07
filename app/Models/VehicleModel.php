@@ -6,15 +6,15 @@ use CodeIgniter\Model;
 
 class VehicleModel extends Model
 {
-    protected $table            = 'vehicles';
-    protected $primaryKey       = 'id';
-    protected $allowedFields    = ['model', 'plate_number', 'type', 'ownership', 'region_id'];
+    protected $table = 'vehicles';
+    protected $primaryKey = 'id';
+    protected $allowedFields = ['model', 'plate_number', 'type', 'ownership', 'region_id'];
 
-    // Fungsi untuk mengambil data kendaraan beserta nama region-nya (Join)
     public function getVehicles()
     {
+        // Melakukan join agar kita bisa mengambil nama wilayah
         return $this->select('vehicles.*, regions.name as region_name')
-                    ->join('regions', 'regions.id = vehicles.region_id')
+                    ->join('regions', 'regions.id = vehicles.region_id', 'left')
                     ->findAll();
     }
 }

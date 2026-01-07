@@ -10,7 +10,7 @@ class CreateRegionsTable extends Migration
     {
         $this->forge->addField([
             'id' => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
-            'name' => ['type' => 'VARCHAR', 'constraint' => 100], // Pusat, Cabang, Tambang 1, dll
+            'name' => ['type' => 'VARCHAR', 'constraint' => 100], 
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('regions');
@@ -18,6 +18,6 @@ class CreateRegionsTable extends Migration
 
     public function down()
     {
-        //
+        $this->forge->dropTable('regions');
     }
 }

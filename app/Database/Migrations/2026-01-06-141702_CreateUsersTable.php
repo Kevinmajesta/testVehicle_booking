@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration
             'username' => ['type' => 'VARCHAR', 'constraint' => 50],
             'password' => ['type' => 'VARCHAR', 'constraint' => 255],
             'role' => ['type' => 'ENUM', 'constraint' => ['admin', 'approver']],
-            'level' => ['type' => 'INT', 'constraint' => 1, 'null' => true], // 1 untuk Atasan Lvl 1, 2 untuk Lvl 2
+            'level' => ['type' => 'INT', 'constraint' => 1, 'null' => true], 
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('users');
@@ -21,6 +21,6 @@ class CreateUsersTable extends Migration
 
     public function down()
     {
-        //
+        $this->forge->dropTable('users');
     }
 }

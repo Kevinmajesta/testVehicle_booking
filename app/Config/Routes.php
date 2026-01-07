@@ -38,4 +38,5 @@ $routes->post('booking/update/(:num)', 'Booking::update/$1');
 $routes->post('booking/delete/(:num)', 'Booking::delete/$1');
 $routes->get('booking/approval', 'Booking::approvalList');
 $routes->get('booking/approve/(:num)/(:num)', 'Booking::approveAction/$1/$2');
+$routes->get('booking/detail/(:num)', 'Booking::detail/$1');
 $routes->get('booking/export', 'Booking::export');

@@ -130,17 +130,41 @@ class Booking extends BaseController
 
     public function approveAction($id, $level)
     {
-        $booking = $this->bookingModel->find($id);
+        $userId = session()->get('user_id');
+        $status = ($level == 1) ? 'Waiting Level 2' : 'Approved';
 
-        if ($level == 1) {
-            $status = 'Waiting Level 2';
-        } else {
-            $status = 'Approved';
+        // 1. Update status di tabel utama bookings
+        $this->bookingModel->update($id, ['status' => $status]);
+
+        // 2. Simpan jejak ke tabel approvals
+        $db = \Config\Database::connect();
+        $db->table('approvals')->insert([
+            'booking_id' => $id,
+            'approver_id' => $userId,
+            'level' => $level,
+            'status' => 'Approved',
+            'created_at' => date('Y-m-d H:i:s')
+        ]);
+
+        return redirect()->to(base_url('booking/approval'))->with('success', 'Persetujuan berhasil dicatat.');
+    }
+    
+    public function detail($id)
+    {
+        $booking = $this->bookingModel->getDetailBooking($id); // Kita buat fungsi ini di model
+
+        if (!$booking) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
 
-        $this->bookingModel->update($id, ['status' => $status]);
-        return redirect()->to(base_url('booking/approval'))->with('success', 'Pesanan berhasil disetujui.');
+        $data = [
+            'title' => 'Detail Pemesanan #' . $id,
+            'booking' => $booking
+        ];
+
+        return view('Booking/detail', $data);
     }
+
 
     public function export()
     {

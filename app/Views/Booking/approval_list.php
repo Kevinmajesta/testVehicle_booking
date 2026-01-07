@@ -8,7 +8,9 @@
     <div class="pc-container">
         <div class="pc-content">
             <div class="card">
-                <div class="card-header"><h5>Persetujuan Pemesanan Kendaraan</h5></div>
+                <div class="card-header">
+                    <h5>Persetujuan Pemesanan Kendaraan</h5>
+                </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-hover">
@@ -22,24 +24,34 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $no = 1; foreach ($bookings as $b) : ?>
-                                <tr>
-                                    <td><?= $no++ ?></td>
-                                    <td><?= $b['vehicle_name'] ?></td>
-                                    <td><?= $b['username'] ?></td>
-                                    <td><span class="badge bg-light-warning"><?= $b['status'] ?></span></td>
-                                    <td>
-                                        <?php if ($b['status'] == 'Pending' && $b['approver_1_id'] == session()->get('user_id')) : ?>
-                                            <a href="<?= base_url('booking/approve/'.$b['id'].'/1') ?>" class="btn btn-sm btn-primary">Setujui (Level 1)</a>
-                                        
-                                        <?php elseif ($b['status'] == 'Waiting Level 2' && $b['approver_2_id'] == session()->get('user_id')) : ?>
-                                            <a href="<?= base_url('booking/approve/'.$b['id'].'/2') ?>" class="btn btn-sm btn-success">Setujui (Level 2)</a>
-                                        
-                                        <?php else : ?>
-                                            <span class="text-muted small">Menunggu giliran / Selesai</span>
-                                        <?php endif; ?>
-                                    </td>
-                                </tr>
+                                <?php $no = 1;
+                                foreach ($bookings as $b): ?>
+                                    <tr>
+                                        <td><?= $no++ ?></td>
+                                        <td><?= $b['vehicle_name'] ?></td>
+                                        <td><?= $b['username'] ?></td>
+                                        <td><span class="badge bg-light-warning"><?= $b['status'] ?></span></td>
+                                        <td>
+                                            <?php if ($b['status'] == 'Pending' && $b['approver_1_id'] == session()->get('user_id')): ?>
+                                                <a href="<?= base_url('booking/approve/' . $b['id'] . '/1') ?>"
+                                                    class="btn btn-sm btn-primary">Setujui (Level 1)</a>
+
+                                            <?php elseif ($b['status'] == 'Waiting Level 2' && $b['approver_2_id'] == session()->get('user_id')): ?>
+                                                <a href="<?= base_url('booking/approve/' . $b['id'] . '/2') ?>"
+                                                    class="btn btn-sm btn-success">Setujui (Level 2)</a>
+
+                                            <?php else: ?>
+                                                <span class="text-muted small">Menunggu giliran / Selesai</span>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td>
+                                            <a href="<?= base_url('booking/detail/' . $b['id']) ?>"
+                                                class="btn btn-sm btn-light-primary d-inline-flex align-items-center"
+                                                style="border-radius: 8px;">
+                                                <i class="ti ti-eye me-1" style="font-size: 16px;"></i> View
+                                            </a>
+                                        </td>
+                                    </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>

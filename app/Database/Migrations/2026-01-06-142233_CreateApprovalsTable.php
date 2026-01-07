@@ -12,7 +12,7 @@ class CreateApprovalsTable extends Migration
             'id' => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
             'booking_id' => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true],
             'approver_id' => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true],
-            'level' => ['type' => 'INT', 'constraint' => 1], // 1 atau 2
+            'level' => ['type' => 'INT', 'constraint' => 1], 
             'status' => ['type' => 'ENUM', 'constraint' => ['Approved', 'Rejected']],
             'created_at' => ['type' => 'DATETIME', 'null' => true],
         ]);
@@ -22,6 +22,6 @@ class CreateApprovalsTable extends Migration
 
     public function down()
     {
-        //
+        $this->forge->dropTable('approvals');
     }
 }

@@ -1,4 +1,4 @@
-<title>@@title | Mantis Bootstrap 5 Admin Template</title>
+<title>Tambang Nikel PT. BBB</title>
 <!-- [Meta] -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -7,5 +7,3 @@
 <meta name="keywords" content="Mantis, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Bootstrap Admin Template">
 <meta name="author" content="CodedThemes">
 
-<!-- [Favicon] icon -->
-<link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon">
