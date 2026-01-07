@@ -28,3 +28,14 @@ $routes->post('driver/store', 'Driver::store');
 $routes->get('driver/edit/(:num)', 'Driver::edit/$1');
 $routes->post('driver/update/(:num)', 'Driver::update/$1');
 $routes->delete('driver/delete/(:num)', 'Driver::delete/$1');
+
+//booking
+$routes->get('booking', 'Booking::index');
+$routes->get('booking/create', 'Booking::create');
+$routes->post('booking/store', 'Booking::store');
+$routes->get('booking/edit/(:num)', 'Booking::edit/$1');
+$routes->post('booking/update/(:num)', 'Booking::update/$1');
+$routes->post('booking/delete/(:num)', 'Booking::delete/$1');
+$routes->get('booking/approval', 'Booking::approvalList');
+$routes->get('booking/approve/(:num)/(:num)', 'Booking::approveAction/$1/$2');
+$routes->get('booking/export', 'Booking::export');
