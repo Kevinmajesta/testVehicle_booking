@@ -16,7 +16,6 @@ Proses persetujuan berjenjang dari Admin hingga Atasan Level 2.
 - **Framework:** CodeIgniter 4.6.4
 - **PHP Version:** 8.2.12
 - **Database:** MySQL
-- **Library:** Chart.js (Grafik), PHPOffice (Excel Export)
 
 ## Akun Login
 | Role | Username | Password |
@@ -31,7 +30,6 @@ Proses persetujuan berjenjang dari Admin hingga Atasan Level 2.
 2. **Multi-level Approval**: Persetujuan bertahap (Atasan 1 -> Atasan 2).
 3. **Monitoring Operasional**: Riwayat konsumsi BBM dan biaya servis per kendaraan.
 4. **Log Riwayat Pemakaian**: Menampilkan siapa saja yang pernah menggunakan kendaraan tertentu.
-5. **Dashboard Grafik**: Visualisasi pemakaian kendaraan (Chart.js).
 6. **Export Data**: Laporan pemesanan dalam format Excel.
 
 ## Panduan Instalasi
